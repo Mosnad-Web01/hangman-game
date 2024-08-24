@@ -81,7 +81,6 @@ hintButton.addEventListener('click', () => {
                 disableAllButtons();
             }
         }
-
         // Check if the player has won
         if (!displayedWord.includes('_') && !theManIsHanged) {
             alert('Congratulations! You guessed the word!');
