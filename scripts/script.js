@@ -100,7 +100,7 @@ hintButton.addEventListener('click', () => {
         livesContainer.textContent = `Lives: ${lives}`;
         alphabetContainer.innerHTML = '';
         // Display the hangman figure
-        //stickFigureSec.style.opacity = 0;
+        resetHangmanFigure();
         createAlphabetButtons();
         fetchRandomWord();
     }
@@ -128,7 +128,26 @@ function showNextHangmanPart() {
     }
         
 }
+//reset hangman figure
+function resetHangmanFigure() {
+    const parts = [
+        'hangman-head',
+        'hangman-body',
+        'hangman-leftArm',
+        'hangman-rightArm',
+        'hangman-leftLeg',
+        'hangman-rightLeg'
+    ];
 
+    parts.forEach(part => {
+        const partElement = document.getElementById(part);
+        partElement.classList.add('hidden');
+    });
+
+    incorrectGuesses = 0;
+    theManIsHanged = false;
+    lives = 7;
+}
     // Initialize the game
     resetGame();
 
