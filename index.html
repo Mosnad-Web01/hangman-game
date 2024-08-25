@@ -3,12 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="./styles/style.css" />
   <title>Document</title>
-  <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-  
-
-  <script src="./scripts/script.js"></script>
+  <!--Header-->
+  <header class="container small-wrap">
+    <span>Click For New Game</span>
+    <button id="newGame" class="btn">New Game</button>
+  <!--word-letters-->
+  <section id="word-letters">
+    <div class="guessed-right">H</div>&emsp;
+    <div class="guessed-right">A</div>&emsp;
+    <div class="guessed-right">N</div>&emsp;
+    <div class="guessed-right">G</div>&emsp;
+    <div class="guessed-right">M</div>&emsp;
+    <div class="guessed-right">A</div>&emsp;
+    <div class="guessed-right">N</div>&emsp;
+  </section>
+ </header>
+ <!--main-->
+  <main>
+    <!--hangman figure-->
+    <section id="hangman-figure">
+      <div id="gallow">
+        <div id="pole">
+          <div id="noose"></div>
+          <div id="diagonal"></div>
+          <div id="base"></div>
+        </div>
+      </div>
+      
+      <!--hangman parts-->
+      <section id="stick-figure" class="show-hangman">
+        <svg height="150" width="150">
+            <circle id="hangman-head" class="hidden" cx="25" cy="25" r="10" />
+            <line id="hangman-body" class="hidden" x1="25" y1="34" x2="25" y2="85" />
+            <line id="hangman-leftArm" class="hidden" x1="0" y1="70" x2="25" y2="40" />
+            <line id="hangman-rightArm" class="hidden" x1="25" y1="40" x2="55" y2="70" />
+            <line id="hangman-leftLeg" class="hidden" x1="25" y1="85" x2="0" y2="120" />
+            <line id="hangman-rightLeg" class="hidden" x1="25" y1="85" x2="55" y2="120" />
+        </svg>
+      </section>
+    </section>
+      
+    <!--The Word and hint-->
+    <section class="container">
+      <div id="word"></div>
+      <button id="hintBtn" lass="btn btn-info">?</button>
+      <div id="hint"></div> 
+    </section>
+    <section id="alphabet" class="small-wrap">
+      <div id="word-letters"></div>
+      <div id="lives"></div>
+    </section>
+  </main>
 </body>
+<script defer type="text/javascript" src="./scripts/script.js"></script>
+
 </html>
